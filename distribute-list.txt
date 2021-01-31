@@ -1,0 +1,7 @@
+R1
+
+ip prefix-list FILTER_10.2.2.0 seq 10 deny 10.2.2.0/24
+ip prefix-list FILTER_10.2.2.0 seq 20 permit 0.0.0.0/0 le 32
+
+router ospf 1
+distribute-list prefix FILTER_10.2.2.0 in

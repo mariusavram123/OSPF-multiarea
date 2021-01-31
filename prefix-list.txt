@@ -1,0 +1,8 @@
+R2
+
+ip prefix-list NO-LOOPBACKS seq 10 deny 2.2.2.2/32
+ip prefix-list NO-LOOPBACKS seq 20 deny 3.3.3.3/32
+ip prefix-list NO-LOOPBACKS seq 30 permit 0.0.0.0/0 le 32
+
+router ospf 2
+area 0 filter-list prefix NO-LOOPBACKS in
